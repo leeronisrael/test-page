@@ -1,7 +1,15 @@
 <body>
   <h1>Test Page</h1>
-  <script src="//c.fqtag.com/tag/implement-r.js?org=3FzfMEEquEsSKKb2r0Td&s=[ADROLL:IMPRESSION_ID]&p=[ADROLL:NETWORK]&cmp=[CAMPAIGN_EID]&fmt=banner&rd=[ADROLL:DOMAIN]&rt=display&adw=[ADROLL_WIDTH]&adh=[ADROLL_HEIGHT]&sl=1&fq=1"></script>
-  <noscript> <img src="https://www.fqtag.com/pixel.cgi?org=3FzfMEEquEsSKKb2r0Td&s=[ADROLL:IMPRESSION_ID]&p=[ADROLL:NETWORK]&cmp=[CAMPAIGN_EID]&fmt=banner&rd=[ADROLL:DOMAIN]&rt=displayImg&adw=[ADROLL_WIDTH]&adh=[ADROLL_HEIGHT]&sl=1&fq=1" width="1" height="1" border="0" />
-  </noscript>
+  <script>
+(function(a,b,c,d,e,f,g){e['ire_o'] = c;e[c] = e[c] || function(){(e[c].a = e[c].a||[]).push(arguments)};f = d.createElement(b);g = d.getElementsByTagName(b)[0];f.async = 1;f.src = a;g.parentNode.insertBefore(f,g);})('//d.impactradius-event.com/A1207187-bf68-4358-b17f-2fe2707e305865535>.js','script','ire',document,window);
+</script>
+<script>
+ ire('trackConversion', actionTrackerId , {properties}, {options});
+ ire('secureConversion', actionTrackerId, 'encryptedPropertiesString', 'initializationVector', {options});
+ ire('track', 'eventName', {properties}, {options});
+ ire('trackCart', actionTrackerId, {properties}, {options});
+ ire('identify', {properties}, {options});
+ ire('trackQuality', {properties}, {options});
+</script>
 </body>
 
