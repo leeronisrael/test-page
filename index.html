@@ -1,9 +1,29 @@
-<head>
-</head>
+<!DOCTYPE html>
+<html>
 <body>
-	<h1>Forensiq Test Page</h1>
-	<script src = "https://fqtag.com/tag/implement-r.js?org= h7qeM9a48dvLOY8iduIu &s={{AUCTION_ID}}&p={{JOHNMIKETEST}}&a={{SITE_NAME}}&cmp={{CAMPAIGN_ID}}&fmt=richmedia&rd=URL&ad={{CREATIVE_ID}}&rt=display&sl=1&fq=1"></script>
-	<noscript> 
-	<img src="https://fqtag.com/tag/implement-r.js?org= h7qeM9a48dvLOY8iduIu&s={{AUCTION_ID}}&p={{JOHNMIKETEST}}&a={{SITE_NAME}}&cmp={{CAMPAIGN_ID}}&fmt=richmedia&rd=URL&ad={{CREATIVE_ID}}&rt=display&width="1"height="1" border="0"/>
-	</noscript>	
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
 </body>
+</html>
