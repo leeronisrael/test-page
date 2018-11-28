@@ -1,6 +1,41 @@
-<head>
-</head>
-<body>
-  <h1>Forensiq Test Page</h1> 
-  <script src="https://query.fqtag.com/b?org=z14BeWSZdOokP1y2Ajvw&sk=e26Tvp2qIniEIsLMaQlM&p=&a=subSurce&cmp=&url=ReplacedSite&callback=callMe"></script>
-</body>
+<div id="adEl"></div>
+<script type="text/javascript">
+  /**
+   * @param {Object} pm Parameters.
+   * @param {Function} cb Callback to be called.
+   * @param {number} [tm] Timeout to try and run with.
+   */
+  function SPBAHelper(pm,cb,tm){var w=window,d=document,r='__spCB'+(new Date().getTime().toString(36))+Math.floor((1+Math.random())*0x100000000).toString(16).substring(1),c=false,p='',s=d.createElement('script'),e=w.encodeURIComponent;for(var i in pm)if(pm.hasOwnProperty(i))p+=e(i)+'='+e(pm[i])+'&';p+='callback='+r;s[['s','r','c'].join('')]='//query.fqtag.com/b?'+p;w[r]=function(x){if(!c){c=true;cb(x);}};d.body.appendChild(s);tm&&w.setTimeout(function(){w[r](204)},tm)}
+  function callMe(statusCode) {
+    var adEl = document.getElementById('adEl');
+    switch(statusCode) {
+      case 200:
+        // Execute low-risk logic
+        alert("low-risk");
+      case 204:
+        // If a timeout occurs, show the ad, assuming low-risk logic
+        alert("timeout");
+        break;
+      case 500:
+        adEl.parentElement.removeChild(adEl);
+        // Execute high-risk logic
+       alert("high-risk");
+        break;
+      default:
+        // Invalid authentication
+        alert("invalid-auth");        break;
+    }
+  }
+  SPBAHelper(
+    {
+      "org": "z14BeWSZdOokP1y2Ajvw", // Populate organization id provided by account manager
+      "sk": "e26Tvp2qIniEIsLMaQlM", // Populate public key provided by account manager
+      "p": "%%TTD_SUPPLYVENDOR%%", // Populate Source ID macro
+      "a": "subSource", // Populate Sub Source macro
+      "cmp": "%%TTD_CAMPAIGNID%%", // Populate Campaign ID macro
+      "url": "%%TTD_SITE%%" // Populate encoded page URL macro 
+    }, 
+    callMe, // Callback, can be an anonymous function since the SPBAHelper takes care of the JSONP call.
+    5000 // Default timeout is 5000ms
+  );
+</script>
