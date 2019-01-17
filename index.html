@@ -3,6 +3,29 @@
 <body>
   <h1>Forensiq Test Page</h1>
   <h2>Display Troubleshooting</h2>
+ 
+  <script language="JavaScript" type="text/javascript">
+ function get_qs_param(name) {
+ name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+ var regexS = "[\\?&]" + name + "=([^&#]*)";
+ var regex = new RegExp(regexS);
+ var results = regex.exec(window.location.href);
+ if (results == null)
+ return "";
+ else
+ return results[1];
+ }
+
+var p_param = get_qs_param('irpid');
+ var a_param = get_qs_param('sharedid');
+ var cmp_param = get_qs_param('ircid');
+
+var forensiqscripthttp = '//query.fqtag.com/b?org=WTsN4l8BNb34PnKTbvb1&sk=R1oBnkFLANEk7t1gtDwx7&p=' + p_param + '&cmp=' + cmp_param + '&a=' + a_param + '&url=adp.com&callback=callMe&sl=1';
+ var forensiqscript = document.createElement("script");
+ forensiqscript.setAttribute('src', forensiqscripthttp);
+ document.body.appendChild(forensiqscript);
+</script>
+ 
   <script type="text/javascript"> function callMe(statusCode){
 switch (statusCode) {case 200:
 window.alert("low-risk");
@@ -11,6 +34,3 @@ window.alert("high-risk");
 break; default:
 window.alert("invalid auth");
 }}
-</script>
-<script type="text/javascript" src="//query.fqtag.com/b?org=WTsN4l8BNb34PnKTbvb1&callback=callMe&p=Test&a=Test&cmp=Test&sk=R1oBnkFLANEk7t1gtDwx&url=adp.com"></script>
-</body>
