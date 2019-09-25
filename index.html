@@ -13,7 +13,7 @@
 
 var p_param = get_utm_param('utm_source');
 var cmp_param = get_utm_param('utm_campaign');
-var rd_param = top.window.location;
+var rd_param = encodeURI(top.window.location);
 
 var forensiqscripthttp = '//fqtag.com/implement.js?org=eKyC2MQ8fo6t0yDCd5g0&p=' + p_param + '&cmp=' + cmp_param + '&rd=' + rd_param +'&rt=display&fmt=banner';
  var forensiqscript = document.createElement("script");
