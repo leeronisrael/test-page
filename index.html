@@ -1,17 +1,15 @@
+<body>
+	<h1> Test Page </h1>
 <script type="text/javascript">
- window.onload = function() {
    function callMe(statusCode) {
 switch(statusCode) {
 case 200:
 // Execute low risk logic
 var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
-var script = '//cdn.marphezis.com/cmpp/cst.min.js'
+var source = 'https://cdn.marphezis.com/cmpp/cst.min.js'
 var js = document.createElement("script");
-script.setAttribute('src',js);
-document.body.appendChild(script)
-//     js.type = "text/javascript";
-//     js.src = "//cdn.marphezis.com/cmpp/cst.min.js"
-// document.body.appendChild(js);
+js.setAttribute('src',source);
+document.body.appendChild(js)
 break;
 case 500:
 // Execute high-risk logic
@@ -19,17 +17,11 @@ break;
 default:
 // Invalid authentication
 var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
-var script = '//cdn.marphezis.com/cmpp/cst.min.js'
+var source = 'https://cdn.marphezis.com/cmpp/cst.min.js'
 var js = document.createElement("script");
-script.setAttribute('src',js);
-document.body.appendChild(script)
-}
-}  
- }
+js.setAttribute('src',source);
+document.body.appendChild(js)
+}}
 </script>
 <script type="text/javascript" src="https://query.fqtag.com/b?org=eKyC2MQ8fo6t0yDCd5g0&callback=callMe&p=&a=&cmp=&sk=GEk96PWdoiQIxO5YWkty"></script>
-
-<!-- var forensiqscripthttp = '//fqtag.com/tag/implement-r.js?org=ORGID&p=' + p_param + '&cmp=' + cmp_param + '&c2=' + c2_param + '&rt=click';
- var forensiqscript = document.createElement("script");
- forensiqscript.setAttribute('src', forensiqscripthttp);
- document.body.appendChild(forensiqscript); -->
+</body>	
