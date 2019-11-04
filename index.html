@@ -1,10 +1,12 @@
 <script type="text/javascript">
-function callMe(statusCode) {
+ window.onload = function() {
+   function callMe(statusCode) {
 switch(statusCode) {
 case 200:
 // Execute low risk logic
 var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
 var head = document.getElementsByTagName('body')[0];
+console.log(head);
 var js = document.createElement("script");
     js.type = "text/javascript";
     js.src = "//cdn.marphezis.com/cmpp/cst.min.js"
@@ -16,12 +18,12 @@ break;
 default:
 // Invalid authentication
 var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
-var head = document.getElementsByTagName('body')[0];
 var js = document.createElement("script");
     js.type = "text/javascript";
     js.src = "//cdn.marphezis.com/cmpp/cst.min.js"
 head.appendChild(js);
 }
-}
+}  
+ }
 </script>
 <script type="text/javascript" src="https://query.fqtag.com/b?org=eKyC2MQ8fo6t0yDCd5g0&callback=callMe&p=&a=&cmp=&sk=GEk96PWdoiQIxO5YWkty"></script>
