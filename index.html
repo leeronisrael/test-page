@@ -1,27 +1,23 @@
 <body>
 	<h1> Test Page </h1>
-<script type="text/javascript">
-   function callMe(statusCode) {
-switch(statusCode) {
-case 200:
-// Execute low risk logic
-var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
-var source = 'https://cdn.marphezis.com/cmpp/cst.min.js'
-var js = document.createElement("script");
-js.setAttribute('src',source);
-document.body.appendChild(js)
-break;
-case 500:
-// Execute high-risk logic
-break;
-default:
-// Invalid authentication
-var compassSmartTag={h:"2141192",t:"25752",d:"2",referral:"sizzlepixs.com",y_b:{y:"j",s:"160x600"}}
-var source = 'https://cdn.marphezis.com/cmpp/cst.min.js'
-var js = document.createElement("script");
-js.setAttribute('src',source);
-document.body.appendChild(js)
-}}
+<script language="JavaScript" type="text/javascript">
+ function get_utm_param(name) {
+ name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+ var regexS = "[\\?&]" + name + "=([^&#]*)";
+ var regex = new RegExp(regexS);
+ var results = regex.exec(window.location.href);
+ if (results == null)
+ return "";
+ else
+ return results[1];
+ }
+
+var p_param = get_utm_param('fpaffiliate');
+var p2_param = get_utm_param('fpsub');
+
+var forensiqscripthttp = 'https://fqtag.com/implement.js?rt=display&fmt=banner&org=W47r71pRxhBkEFsiCoKp&p=' + 'p_param' + '_' + 'p2_param' + '&a=%epid!&cmp=%eadv!&rd=%%PATTERN:url%%&aid=%%ADVERTISING_IDENTIFIER_PLAIN%%&gid=%%ADVERTISING_IDENTIFIER_PLAIN%%&adw=%%WIDTH%%&adh=%%HEIGHT%%&c1=&c2=%ebuy!&c3=%esid!&pfm=dfp' 
+ var forensiqscript = document.createElement("script");
+ forensiqscript.setAttribute('src', forensiqscripthttp);
+ document.body.appendChild(forensiqscript);
 </script>
-<script type="text/javascript" src="https://query.fqtag.com/b?org=eKyC2MQ8fo6t0yDCd5g0&callback=callMe&p=&a=&cmp=&sk=GEk96PWdoiQIxO5YWkty"></script>
-</body>	
+</body>
