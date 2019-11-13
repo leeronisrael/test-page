@@ -1,6 +1,4 @@
-<body>
-	<h1> Test Page </h1>
-<script language="JavaScript" type="text/javascript">
+<script async language="JavaScript" type="text/javascript">
  function get_utm_param(name) {
  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
  var regexS = "[\\?&]" + name + "=([^&#]*)";
@@ -12,12 +10,11 @@
  return results[1];
  }
 
-var p_param = get_utm_param('fpaffiliate');
-var p2_param = get_utm_param('fpsub');
+var a_param = get_utm_param('utm_source');
+var rd_param = encodeURIComponent(document.referrer);
 
-var forensiqscripthttp = 'https://fqtag.com/implement.js?rt=display&fmt=banner&org=W47r71pRxhBkEFsiCoKp&p=' + p_param + '_' + p2_param + '&a=%epid!&cmp=%eadv!&rd=%%PATTERN:url%%&aid=%%ADVERTISING_IDENTIFIER_PLAIN%%&gid=%%ADVERTISING_IDENTIFIER_PLAIN%%&adw=%%WIDTH%%&adh=%%HEIGHT%%&c1=&c2=%ebuy!&c3=%esid!&pfm=dfp' 
+var forensiqscripthttp = '//fqtag.com/tag/implement-r.js?rt=display&fmt=banner&org=fq3ofHnfNGqwkxaqIJg1&p=%eaid!&a=' + a_param + '&cmp=%eadv!&rd=%%PATTERN:url%%&c1=%epid!&c2=%eadv!&c3=%esid!&c4=' + rd_param + '&pfm=dfp';
  var forensiqscript = document.createElement("script");
  forensiqscript.setAttribute('src', forensiqscripthttp);
  document.body.appendChild(forensiqscript);
 </script>
-</body>
